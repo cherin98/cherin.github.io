@@ -1,16 +1,697 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <meta
-      name="viewport"
-      content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
-    />
-    <title>채린</title>
-  </head>
-  <body>
-    <span>Hello World!</span>
-  </body>
-</html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Hello, my name is Cherin! 😊</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7382b70f-8326-4086-962d-1cc69d7c5484" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_11.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🐯</span></div><h1 class="page-title">Hello, my name is Cherin! <a href="https://emojipedia.org/smiling-face-with-smiling-eyes/"><strong>😊</strong></a></h1><p class="page-description"></p></header><div class="page-body"><p id="60fb5ac7-a973-4449-9350-d888671ba4b7" class=""><mark class="highlight-blue"><strong>#ENFJ</strong></mark><mark class="highlight-teal"><strong> #Growth</strong></mark><strong> </strong><mark class="highlight-yellow"><strong>#Understanding</strong></mark><strong> </strong><mark class="highlight-purple"><strong>#Optimistic</strong></mark><strong> </strong><mark class="highlight-orange"><strong>#Learning 💕</strong></mark></p><p id="ba61b222-dee0-4832-acd0-e9a5f1439a55" class="">
+</p><div id="b849c502-bac3-4aee-9880-a39ba740a8f7" class="column-list"><div id="08390d5f-2b6c-4bf8-ac75-c49128258db4" style="width:25%" class="column"><p id="ce7db412-a70d-42ed-a262-60fd827e21c2" class="">
+</p><figure id="0fbb8e57-1880-4e9a-99b5-1555ddef3562" class="image"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/fotor_2023-4-19_23_50_28.jpg"><img style="width:848px" src="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/fotor_2023-4-19_23_50_28.jpg"/></a></figure><p id="3b100a40-98c7-4dc1-9a98-c933eee4bb6d" class="">
+</p></div><div id="0564c4b6-2740-4f01-a74c-5bb4c4b2c570" style="width:75%" class="column"><h2 id="18858bb5-e7a6-4146-9e1a-f48c07467c96" class=""><mark class="highlight-blue"><strong>안녕하세요! 글로벌 서비스를 만드는 김채린입니다.</strong></mark></h2><p id="d2dd174d-5b2a-4c2d-a405-ad6ea441cd1e" class="">
+</p><p id="ff2a1b14-d87a-486e-8753-0585365ba9a9" class=""><mark class="highlight-blue_background">성장하고 있는 서비스기획자입니다.</mark><mark class="highlight-blue_background"><a href="https://emojipedia.org/light-bulb/">💡</a></mark><mark class="highlight-blue_background">
+13년간 브라질</mark><mark class="highlight-blue_background"><a href="https://emojipedia.org/flag-brazil/#:~:text=%F0%9F%87%A7%F0%9F%87%B7%20Flag%3A%20Brazil">🇧🇷</a></mark><mark class="highlight-blue_background">, 아랍에미레이트🇦🇪, 사우디아라비아</mark><mark class="highlight-blue_background"><a href="https://emojipedia.org/flag-saudi-arabia/#:~:text=%F0%9F%87%B8%F0%9F%87%A6%20Flag%20for%20Saudi%20Arabia%20Emoji">🇸🇦</a></mark><mark class="highlight-blue_background"> 등 다양한 국가에서 생활해왔습니다. 이런 경험들을 바탕으로 여러 교육기관에서 영어교육자로서 근무했고, 에듀테크 스타트업에서 인턴십을 하며 IT업계에서의 커리어를 시작하였습니다.</mark><mark class="highlight-blue_background"><a href="https://emojipedia.org/star/">⭐</a></mark></p><p id="199a8574-846d-4b52-918b-9658455a4158" class="">
+</p><p id="13af99dc-8eb0-40e4-887c-b4f73fb92ccf" class=""><mark class="highlight-blue_background">현재는 다양한 기업들의 프로젝트 경험을 위해 웹 에이전시에서 운영PM으로 근무하고 있으며 대규모 글로벌 프로젝트 운영</mark><mark class="highlight-blue_background"><a href="https://emojipedia.org/globe-showing-americas/">🌎</a></mark><mark class="highlight-blue_background">, 서비스 기획 및 데이터 분석 그리고 현지와의 커뮤니케이션을 담당하고 있습니다.</mark></p><p id="ae9050d2-5bbd-46da-a85d-faa5144fc128" class="">
+</p><p id="7d1be52f-b6d2-44ca-be2f-e367a0de9d5d" class="">
+</p></div></div><h1 id="3d4e9726-b691-4b44-98c8-5f561bf3e5a3" class="">🔎 Profile</h1><figure id="fb6d22f1-cf40-48c8-8616-219f58974227" class="image"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"><img style="width:1080px" src="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"/></a></figure><p id="9f368a9d-24db-4ac2-8cf5-fc109e8514f1" class="">상세한 경력 기술서는 📎<a href="https://drive.google.com/file/d/1ZPj85uEMXr1HOm5NpwvLXp1i1TU6Xq6n/view?usp=sharing">이력서</a> 에서 확인해주세요.</p><div id="38c7f909-daff-4ee4-90af-5a5a43ec9756" class="column-list"><div id="2e54db4e-083a-40a0-b363-227a602fc003" style="width:50%" class="column"><h3 id="74e7d85b-ee06-4c78-8633-33970abc0660" class="">경력 💼</h3><p id="d50b7d2d-0cf0-4f5a-8f45-4c0dd17fd1a4" class="">이지미디어   <mark class="highlight-gray">2022.11 - 현재</mark></p><p id="c6f2c0b0-f5e5-483e-9ce0-b76dc06fd919" class="">• 각종 웹사이트 유지보수 및 운영</p><p id="076486af-91e8-4ec0-a53d-e814520a5b28" class="">• 현대자동차: 서비스 기획 및 아이디어 제안</p><p id="a856abca-70c6-4576-a434-9216f4d2c448" class="">• 유저 경험 기반의 서비스 개선 </p><p id="297bfc2b-cf19-4965-bb80-8856d1caf0ec" class="">• 유저별 UI/UX 가이드/메뉴얼 제작</p><p id="4f16fbd4-6ccb-45cf-849f-c39dba59ee2c" class="">
+</p><p id="8c1040df-ec52-4646-950c-b48be7c74e9f" class="">
+</p><p id="323940f1-0884-4c41-bc3f-a9066e04c6f9" class="">링글에듀케이션서비스 (Ringle)  </p><p id="feb4bcf9-c185-4e0e-897a-312bfbfd6ed6" class=""><mark class="highlight-gray">2022.05 - 2022.08</mark></p><p id="d5c8a547-7812-4b7f-827e-271668ef49ef" class="">• +1800 튜터 모집 및 관리</p><p id="03fc4530-68db-4d0a-a3c6-1a04dcae8204" class="">• 원어민 튜터 문의 대응 및 솔루션 제공</p><p id="498f4e2b-aa1d-4552-adb7-ed8c09468b49" class="">• 튜터 NO-SHOW 관리</p><p id="755a248d-072d-4d17-8923-68c8c151729d" class="">• 목세션 관리 및 효율화 (모집 인터뷰)</p><p id="3a64d707-1291-4ea1-ac8c-e7791dc0da9b" class="">• 튜터 Resume 심사</p><p id="8a29786a-8dfb-40e0-bfb7-154892c1fb5c" class="">• 유저 CX 기반의 서비스 개선 </p><p id="2bc6ae47-6c33-4061-adf4-6d10a17bdd79" class="">
+</p></div><div id="eea7410d-3097-449e-a86b-b7813f2997a5" style="width:50%" class="column"><h3 id="fffca8b9-5700-4693-9a32-9564a7b18a64" class="">학력 🏫</h3><p id="3ec8b3d4-3e56-4e4c-a18b-4d445d365dc8" class="">American International School - Riyadh <mark class="highlight-gray">2017.05 졸업</mark></p><p id="0ab0445b-4a56-4d84-ab25-785f0fbda13e" class="">성균관대학교 의상학  <mark class="highlight-gray">2022.08 졸업</mark></p><p id="11672d69-22a2-445b-98ff-0ded00c8701c" class="">
+</p><h3 id="a70e68af-331d-496b-8c10-a6062e78b62a" class="">외국어 <a href="https://emojipedia.org/"><strong>📙</strong></a></h3><p id="8025c114-0cb9-40db-9249-7aa8d5ae5434" class="">토익  910</p><p id="2ae980cb-3d5a-4294-a8b6-8c0826be43d8" class="">비지니스 영어 (상)</p><p id="7a8c8a81-1d29-420a-99bb-cfb7bd432532" class="">영어 회화 (<mark class="highlight-gray">원어민)</mark></p><p id="c689e4cd-f5bc-4819-aba2-8096555e8d6a" class="">
+</p><h3 id="37158146-53bd-4299-8604-88af29da802f" class="">기타 (EXTRA CURRICULARS)✨ 💫</h3><p id="4a284e8e-8c33-4e89-9559-1245a4dea624" class="">성균관대학교 Future-self Design Group Coaching 교내활동 이수 - 2021 🧗</p><p id="43131372-6304-4f40-a374-d67d17806f7e" class="">
+[SKKU Thesis Collection] Fashion Film ‘GRAB BY THE LAPELS&#x27; 패션필름 기획/제작 - 2021👗</p><p id="adb977b8-c26a-499b-b7a5-7c355bd4e237" class="">
+[수강생 인터뷰영상] 성균관대학교 의상학과 학생에게 패션디자인이란 인터뷰 촬영 - 2021 👗</p><p id="f6016178-59ad-4e86-86ba-111352ecdef9" class="">
+Team BLACKOUT 대학연합 문화기획 동아리 활동 - 2018😋</p></div></div><p id="1c92f915-abae-4850-892e-dc482ccfb748" class="">
+</p><h1 id="098beb9b-24fa-4963-9fc4-1169ad2d29b4" class="">⚒️ Skills</h1><figure id="3b827ef5-4781-407d-81de-da6d2a001978" class="image"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"><img style="width:1080px" src="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"/></a></figure><p id="001a07f0-6682-4223-a717-1b303cb8c191" class="">역량의 전문성에 따라<strong> </strong><strong><mark class="highlight-blue">상 </mark></strong><strong>· </strong><strong><mark class="highlight-yellow">중 · </mark></strong><mark class="highlight-red"><strong>하</strong></mark><mark class="highlight-red"> </mark>수준으로 분류하였습니다.</p><div id="f66c8d19-de6c-4ea6-b55c-e5aaa7c7db21" class="column-list"><div id="a99f2743-7701-4417-854e-6225ac7e93db" style="width:33.33333333333333%" class="column"><p id="93ec2d33-3e25-4279-88a8-8f36f6537f91" class=""><strong>Hard Skills</strong></p><p id="8e817219-91a0-4c3b-949a-2b3a231c2536" class=""><strong><mark class="highlight-blue">FIGMA</mark></strong></p><p id="115287f0-522d-43c0-b823-7751cdc5b326" class=""><strong><mark class="highlight-blue">비지니스 영어/회화</mark></strong></p><p id="deb67660-82c0-4d42-b1b7-a5ce74e05bb5" class=""><strong><mark class="highlight-blue">엑셀 데이터 분석</mark></strong></p><p id="fba98f35-7e58-4fd1-a33a-e6f533c0a50c" class=""><strong><mark class="highlight-blue">GA</mark></strong></p><p id="34391530-87f1-4227-8bce-0a3f858ece72" class="">
+</p></div><div id="847b075e-34b5-4d52-981b-d56fb907e846" style="width:33.33333333333333%" class="column"><p id="d27332e4-d83a-496d-92a5-ca6a63194ff8" class=""><strong>Soft Skills</strong></p><p id="7d90024b-efc5-4160-ba3f-abc5bb5677c0" class=""><strong><mark class="highlight-yellow">커뮤니케이션</mark></strong></p><p id="f1f31ad3-528f-4b44-be44-7578c9af34fe" class=""><strong><mark class="highlight-yellow">꼼꼼함</mark></strong></p><p id="c0a882a7-1e2f-45a5-bfcd-9df208be41d8" class=""><strong><mark class="highlight-yellow">계획적</mark></strong></p><p id="f0d72cac-b8a6-4a9b-9dbf-30ae18b9e440" class="">
+</p></div><div id="61ebb7e6-f721-4b6b-9101-9859565253c1" style="width:33.33333333333336%" class="column"><p id="14c796da-c56e-4784-915f-1611bd40e2fe" class=""><strong>Basic</strong> <strong>Tools</strong></p><p id="455598f0-6ec6-44b7-9dab-3ba0c6fc7383" class=""><strong><mark class="highlight-red">SLACK</mark></strong></p><p id="e2e0a868-0f5d-4d9f-8810-a7ba319d1e4c" class=""><strong><mark class="highlight-red">Notion</mark></strong></p><p id="a43c441a-98bb-4082-a111-0df6f6cdf4c5" class=""><strong><mark class="highlight-red">PPT/EXCEL/WORD</mark></strong></p></div></div><h1 id="b69ef36d-25db-4375-94b3-9bbf361c083e" class="">👩🏻‍💻 Projects</h1><figure id="cbc5176a-9eb7-48c1-8f2e-5514d2c99230" class="image"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"><img style="width:1080px" src="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"/></a></figure><p id="6170d4fb-cc21-45b1-917d-977ff8a707c6" class="">담당한 프로젝트를 최신순으로 구성했습니다. 각 이미지를 누르면 주요 내용 / 역할&amp;기여도 / 기간 등을 확인할 수 있습니다.</p><div id="6cc8f15d-bb3d-4448-909d-b594788ad582" class="collection-content"><h4 class="collection-title">포트폴리오 갤러리</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>이름</th></tr></thead><tbody><tr id="1cd3910d-c96b-4a93-9b42-59d43074e1c9"><td class="cell-title"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9%20%E1%84%80%E1%85%A2%E1%86%AF%E1%84%85%E1%85%A5%E1%84%85%E1%85%B5%206cc8f15dbb3d4448909db594788ad582/%E1%84%92%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A2%E1%84%8C%E1%85%A1%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8E%E1%85%A1%20HGCX%20HPM%201cd3910dc96b4a939b4259d43074e1c9.html">현대자동차: HGCX / HPM</a></td></tr><tr id="2937d841-5392-43a0-a0f9-4c50b60d6d9b"><td class="cell-title"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9%20%E1%84%80%E1%85%A2%E1%86%AF%E1%84%85%E1%85%A5%E1%84%85%E1%85%B5%206cc8f15dbb3d4448909db594788ad582/%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%86%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5%20%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20PM%202937d841539243a0a0f94c50b60d6d9b.html">이지미디어: 운영 PM </a></td></tr><tr id="9796f6a7-14ae-4cbb-82d5-2e2787119d45"><td class="cell-title"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9%20%E1%84%80%E1%85%A2%E1%86%AF%E1%84%85%E1%85%A5%E1%84%85%E1%85%B5%206cc8f15dbb3d4448909db594788ad582/RINGLE%20TUTOR%20PM%20TEAM%209796f6a714ae4cbb82d52e2787119d45.html">RINGLE: TUTOR PM TEAM</a></td></tr><tr id="27da9cd2-60c5-4491-bc23-b33df1ba947e"><td class="cell-title"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9%20%E1%84%80%E1%85%A2%E1%86%AF%E1%84%85%E1%85%A5%E1%84%85%E1%85%B5%206cc8f15dbb3d4448909db594788ad582/%5B2021%20SKKU%20Thesis%20Collection%5D%20Fashion%20Film%20%F0%9F%8E%A5%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%B2%2027da9cd260c54491bc23b33df1ba947e.html">[2021 SKKU Thesis Collection] Fashion Film  🎥
+성균관대학교 2021년 패션필름</a></td></tr></tbody></table></div><figure id="1ec5efad-e51d-41be-b48b-52f78016efd3" class="image"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"><img style="width:1080px" src="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"/></a></figure><h1 id="2d743e73-56c8-44a5-8d1d-622d3a58718c" class="">👩🏻‍🚀 Experience &amp; Fun facts!</h1><figure id="f74139c7-3d73-4c85-bd80-249eecefb3b6" class="image"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"><img style="width:1080px" src="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"/></a></figure><p id="85837856-a481-4873-b553-bc463706a2bc" class=""><strong>#여행🌏  #강아지🐶  #미술🎨  #게임</strong><strong><a href="https://emojipedia.org/emoji/%F0%9F%8E%AE/">🎮</a></strong></p><ul id="0fc60ff9-a9da-4379-a4c1-5f753902d7a3" class="bulleted-list"><li style="list-style-type:disc">브라질에서<strong> 이중국적</strong>으로 태어나 유치원부터 시작해 초중고까지의 학창 시절을 모두 중동에서 보냈어요! 국제 학교를 재학하며 여러 문화에 노출된 상태로 생활했습니다.</li></ul><ul id="b7124263-892b-4ad2-b2b9-dff46ca8f375" class="bulleted-list"><li style="list-style-type:disc">고등학교때 미술 공부에 빠져 미국 미대 입시 과정을 치른 뒤 지원했던 모든 대학교에 합격하고 장학금까지 받았지만, 학원 이상의 한국의 교육 문화를 경험하고싶어 한국으로 대학을 왔습니다!</li></ul><ul id="17f8f1cb-102d-473c-b660-7e26c41fbb71" class="bulleted-list"><li style="list-style-type:disc"><strong>밤비</strong>라는 2키로 조차 안나가는 <strong>포메라니안</strong>을 키우고 있어요! 이번 년 4월에 9살이 된 성인견 이지만 한결같이 저에겐 눈에 넣어도 아프지 않을 사랑둥이랍니다!</li></ul><ul id="0ec4d431-f3e0-4969-b69d-6703b46b3d4b" class="bulleted-list"><li style="list-style-type:disc">자유 시간에는 자기 계발 외로는 게임을 굉장히 좋아합니다. LoL, 배그, 오버워치, 메이플스토리 등 다양하게 하고 있습니다, 롤은 미드 라이너로 3년 전에 다이아 4까지 도달했답니다!</li></ul><p id="b53efc82-bbc2-4082-b75f-1e4e91a4ec1e" class="">
+</p><h1 id="c43436f4-bebd-4a0c-920e-2a05df9b6d25" class="">🙋🏻 Work style: Team-based + Problem solving</h1><figure id="0e2f8d7a-c3e5-4cb4-9717-44272f69f3aa" class="image"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"><img style="width:1080px" src="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"/></a></figure><ul id="fafc003a-55cd-4bc5-a9b2-01f9f97a5e05" class="bulleted-list"><li style="list-style-type:disc">일할 때는 목표를 설정하고 좋은 결과를 위해 노력합니다.</li></ul><ul id="8f812a77-c288-4673-977b-e1afb4eec380" class="bulleted-list"><li style="list-style-type:disc">업무 프로세스에서 배우는 점이 있다면, 기록하고 다음 업무에 참고합니다.</li></ul><ul id="216ce58c-2f85-48d8-96e5-fa2606c0f497" class="bulleted-list"><li style="list-style-type:disc">회사와 함께 성장할 수 있는 환경에서 동기부여를 받는 편입니다.</li></ul><ul id="3ba02f01-beb5-4985-afa2-890b72d8d3fc" class="bulleted-list"><li style="list-style-type:disc">해야 할 일들의 우선순위를 설정해 중요한 업무부터 순서대로 실행합니다.</li></ul><ul id="e89927b6-6c5c-4be8-b42b-48b70aeda7dd" class="bulleted-list"><li style="list-style-type:disc">주어진 일은 즐겁게 할 수 있도록 흥미를 가질 수 있는 방법을 찾습니다.</li></ul><ul id="baa0a5d9-06ec-461b-b861-f82511776e54" class="bulleted-list"><li style="list-style-type:disc">문제가 생긴다면 한걸음 뒤로 물러나 차분하게 그 상황 안에서 일을 진행할 수 있는 방법을 생각합니다.</li></ul><ul id="774eb5d7-a185-4b70-a618-3840d5a679cf" class="bulleted-list"><li style="list-style-type:disc">정해진 기간 안에 끝내기 어려운 일이 있다면 Blocker가 어떤 것이 있었는지 고민합니다.</li></ul><ul id="97a75daa-34f8-4d26-98dd-d4e57c9b466b" class="bulleted-list"><li style="list-style-type:disc">기한을 지키기 어렵다면 팀원과 함께 방법을 고민합니다.</li></ul><p id="5a2f57a8-9ee8-4f69-9678-0a102be6304a" class="">
+</p><h1 id="74ea19f9-d241-49b6-9f86-975ed1ed40e4" class="">👋 Contact</h1><figure id="245ad3be-807e-43e1-9faa-b67fcedd18aa" class="image"><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"><img style="width:1080px" src="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484/Line_1_(1).png"/></a></figure><p id="98702c42-2466-49fd-bff1-ea2b7951fd6a" class="">✉️<a href="mailto:marketing@wantedlab.com">c</a>herinkim98@gmail.com 📱<mark class="highlight-gray">+82 10-4064-8483   🏠 서울 송파구</mark></p><p id="1999d99b-dad3-419f-a670-80e5a5364942" class="">
+</p><p id="5e158b7d-3d75-468b-8d56-a09122b72644" class=""><a href="Hello,%20my%20name%20is%20Cherin!%20%F0%9F%98%8A%207382b70f83264086962d1cc69d7c5484.html">👆 맨 위로 올라가기 👆</a></p><p id="fc74b5d6-a45d-40d7-abad-ad67289be031" class="">
+</p></div></article></body></html>
